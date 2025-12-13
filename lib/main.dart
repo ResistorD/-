@@ -4,6 +4,7 @@ import 'theme/app_theme.dart';
 import 'services/storage_service.dart';
 import 'services/prefs_service.dart';
 import 'screens/main_screen.dart';
+import 'figma/figma_guidelines.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

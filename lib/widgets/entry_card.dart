@@ -2,6 +2,7 @@ import 'dart:ui' show FontFeature;
 import 'package:flutter/material.dart';
 import '../models/entry.dart';
 import '../services/prefs_service.dart';
+import '../figma/figma_guidelines.dart';
 
 class EntryCard extends StatelessWidget {
   final Entry entry;
@@ -41,65 +42,69 @@ class EntryCard extends StatelessWidget {
     if ((entry.comment ?? '').isNotEmpty) commentParts.add(entry.comment!);
     final comment = commentParts.join(' • ');
 
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    return FigmaContainer.card(
+      padding: EdgeInsets.fromLTRB(16, 12, 16, 12), // Используем стандартный отступ Figma
+      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 6), // Сохраняем прежние отступы
+      borderRadius: FigmaDesignSystem.borderRadius['large'], // Используем Figma-радиус скругления
       child: InkWell(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: FigmaDesignSystem.borderRadius['large'],
         onTap: onTap,
         onLongPress: onLongPress,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 12, height: 12,
-                margin: const EdgeInsets.only(right: 12, left: 2),
-                decoration: BoxDecoration(
-                  color: dotColor, shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: dotColor.withValues(alpha: 0.35),
-                      blurRadius: 6, spreadRadius: 0.5,
-                    ),
-                  ],
-                ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 12, height: 12,
+              margin: EdgeInsets.only(right: 12, left: 2),
+              decoration: BoxDecoration(
+                color: dotColor, shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: dotColor.withValues(alpha: 0.35),
+                    blurRadius: 6, spreadRadius: 0.5,
+                  ),
+                ],
               ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${entry.systolic}/${entry.diastolic} мм рт.ст.',
+                    style: FigmaDesignSystem.typography['titleMedium']?.copyWith(
+                      fontWeight: FontWeight.w600, 
+                      color: cs.onSurface,
+                    ),
+                  ),
+                  FigmaSizedBox.unit(heightFactor: 0.5), // 4dp отступа по Figma-системе
+                  if (comment.isNotEmpty)
                     Text(
-                      '${entry.systolic}/${entry.diastolic} мм рт.ст.',
-                      style: text.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600, color: cs.onSurface,
+                      comment,
+                      maxLines: 1, overflow: TextOverflow.ellipsis,
+                      style: FigmaDesignSystem.typography['bodyMedium']?.copyWith(
+                        color: cs.onSurfaceVariant,
+                      ),
+                    )
+                  else if ((entry.pulse ?? 0) > 0)
+                    Text(
+                      'Пульс: ${entry.pulse}',
+                      style: FigmaDesignSystem.typography['bodyMedium']?.copyWith(
+                        color: cs.onSurfaceVariant,
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    if (comment.isNotEmpty)
-                      Text(
-                        comment,
-                        maxLines: 1, overflow: TextOverflow.ellipsis,
-                        style: text.bodyMedium?.copyWith(color: cs.onSurfaceVariant),
-                      )
-                    else if ((entry.pulse ?? 0) > 0)
-                      Text('Пульс: ${entry.pulse}',
-                        style: text.bodyMedium?.copyWith(color: cs.onSurfaceVariant),
-                      ),
-                  ],
-                ),
+                ],
               ),
-              const SizedBox(width: 12),
-              Text(
-                _hhmm(entry.timestamp),
-                style: text.bodySmall?.copyWith(
-                  color: cs.onSurfaceVariant,
-                  fontFeatures: const [FontFeature.tabularFigures()],
-                ),
+            ),
+            FigmaSizedBox.unit(widthFactor: 1.5), // 12dp отступа по Figma-системе
+            Text(
+              _hhmm(entry.timestamp),
+              style: FigmaDesignSystem.typography['bodySmall']?.copyWith(
+                color: cs.onSurfaceVariant,
+                fontFeatures: const [FontFeature.tabularFigures()],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
