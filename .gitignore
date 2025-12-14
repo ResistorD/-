@@ -20,4 +20,78 @@ Thumbs.db
 
 # Coverage
 coverage/
+# Flutter/Dart specific
+.dart_tool/
+.build/
+packages/
+*.iws
+*.swp
+*.swo
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Build artifacts
+build/
+dist/
+target/
+
+# Python related (if any mixed projects)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.nox/
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
+
+# Node related
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Gradle
+.gradle/
+build/
+
+# Temporary folders
+temp/
+tmp/
 ```
