@@ -1,4 +1,25 @@
 ```
+# Dependencies
+.dart_tool/
+.build/
+.packages
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
 # Flutter/Dart specific
 .dart_tool/
 .build/
