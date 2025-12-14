@@ -1,57 +1,76 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
+```
+# Flutter/Dart specific
+.dart_tool/
 .build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+packages/
+*.iws
+*.swp
+*.swo
+*.log
+*.tmp
 
-# IntelliJ related
+# Environment
+.env
+.env.local
+*.env.*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
 *.iml
 *.ipr
 *.iws
-.idea/
 
-*.zip
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Build artifacts
+build/
+dist/
+target/
 
-# Dart/Flutter
-.dart_tool/
-.packages
-.pub/
+# Python related (if any mixed projects)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.nox/
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
+
+# Node related
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Gradle
+.gradle/
 build/
 
-# iOS
-ios/Pods/
-ios/.symlinks/
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/App.framework
-ios/Flutter/Generated.xcconfig
-ios/Flutter/ephemeral/
-
-# Android
-android/.gradle/
-android/local.properties
-android/**/key.properties
-**/*.jks
-**/*.keystore
-
-# IDE
-.idea/
-.vscode/
-*.iml
-
-# Misc
-.DS_Store
-
+# Temporary folders
+temp/
+tmp/
+```
