@@ -1,57 +1,23 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-*.zip
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Dart/Flutter
+```
+# Dependencies
 .dart_tool/
+.build/
 .packages
-.pub/
-build/
 
-# iOS
-ios/Pods/
-ios/.symlinks/
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/App.framework
-ios/Flutter/Generated.xcconfig
-ios/Flutter/ephemeral/
+# Environment
+.env
+.env.local
+*.env.*
 
-# Android
-android/.gradle/
-android/local.properties
-android/**/key.properties
-**/*.jks
-**/*.keystore
+# Logs and temp files
+*.log
+*.tmp
+*.swp
 
-# IDE
-.idea/
-.vscode/
-*.iml
-
-# Misc
+# OS generated files
 .DS_Store
+Thumbs.db
 
+# Coverage
+coverage/
+```

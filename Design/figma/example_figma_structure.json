@@ -1,0 +1,125 @@
+{
+  "document": {
+    "name": "Pressure Diary App Design",
+    "id": "pressure-diary-design-v1",
+    "lastModified": "2025-12-15T10:30:00Z",
+    "thumbnailUrl": "https://example.com/thumbnails/pressure-diary-thumb.png",
+    "pages": [
+      {
+        "id": "home-screen",
+        "name": "Home Screen",
+        "description": "Main screen for recording blood pressure measurements",
+        "components": [
+          {
+            "id": "record-button",
+            "type": "primary-button",
+            "position": {"x": 50, "y": 200},
+            "size": {"width": 275, "height": 56},
+            "properties": {
+              "text": "Record Pressure",
+              "color": "#3D8BFC",
+              "borderRadius": 8
+            }
+          },
+          {
+            "id": "chart-view",
+            "type": "chart-component",
+            "position": {"x": 20, "y": 300},
+            "size": {"width": 335, "height": 200},
+            "properties": {
+              "title": "Recent Measurements",
+              "chartType": "line"
+            }
+          }
+        ]
+      },
+      {
+        "id": "records-screen",
+        "name": "Records Screen",
+        "description": "Screen displaying historical blood pressure records",
+        "components": [
+          {
+            "id": "filter-controls",
+            "type": "filter-component",
+            "position": {"x": 20, "y": 100},
+            "size": {"width": 335, "height": 56},
+            "properties": {
+              "title": "Filter by Date Range"
+            }
+          },
+          {
+            "id": "record-list",
+            "type": "list-component",
+            "position": {"x": 20, "y": 170},
+            "size": {"width": 335, "height": 400},
+            "properties": {
+              "itemHeight": 80,
+              "backgroundColor": "#FFFFFF"
+            }
+          }
+        ]
+      },
+      {
+        "id": "profile-screen",
+        "name": "Profile Screen",
+        "description": "User profile and settings screen",
+        "components": [
+          {
+            "id": "user-info-card",
+            "type": "card-component",
+            "position": {"x": 20, "y": 100},
+            "size": {"width": 335, "height": 150},
+            "properties": {
+              "borderRadius": 12,
+              "elevation": 2
+            }
+          },
+          {
+            "id": "settings-list",
+            "type": "list-component",
+            "position": {"x": 20, "y": 270},
+            "size": {"width": 335, "height": 300},
+            "properties": {
+              "itemHeight": 60,
+              "backgroundColor": "#FFFFFF"
+            }
+          }
+        ]
+      }
+    ],
+    "styles": {
+      "colors": {
+        "primary": "#3D8BFC",
+        "background": "#FFFFFF",
+        "secondary": "#F5F7FA",
+        "error": "#E53E3E",
+        "success": "#38A169",
+        "text-primary": "#1A202C",
+        "text-secondary": "#718096",
+        "placeholder": "#A0AEC0"
+      },
+      "typography": {
+        "screen-title": {
+          "fontSize": 24,
+          "fontWeight": "bold",
+          "color": "#1A202C"
+        },
+        "subtitle": {
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "color": "#1A202C"
+        },
+        "body": {
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "color": "#1A202C"
+        },
+        "caption": {
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "color": "#718096"
+        }
+      }
+    }
+  }
+}
